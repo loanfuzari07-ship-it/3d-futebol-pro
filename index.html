@@ -123,7 +123,7 @@
   }
   .hero-sub b{color:var(--cyan-soft);}
   .stars{color:#fbbf24; font-size:14px; margin-top:28px;}
-  .avaliar-image{display:block; max-width:340px; width:100%; height:auto; margin:14px auto 0;}
+  .avaliar-image{display:block; max-width:140px; width:100%; height:auto; margin:14px auto 0;}
   .stars span{color:var(--text-faint); margin-left:6px; font-size:13px;}
   .trust-row{
     display:flex; justify-content:center; gap:26px; flex-wrap:wrap;
@@ -395,7 +395,7 @@
   .trust-embed{display:block; width:100%; height:auto; margin:0; padding:0; border:none;}
   .trust-embed:first-of-type{margin-top:22px;}
   .trust-embed + .trust-embed{margin-top:14px;}
-  .mockhero-image{display:block; width:180px; max-width:60%; height:auto; margin:0 auto 20px; padding:0; border:none;}
+  .mockhero-image{display:block; width:320px; max-width:90%; height:auto; margin:0 auto 20px; padding:0; border:none;}
   .plain-ph{display:block; text-align:center; font-size:9px; color:var(--text-faint); padding:4px 0;}
   .pay-icons{display:flex; justify-content:center; gap:14px; margin-top:18px; font-size:11px; color:var(--text-faint);}
 
@@ -439,43 +439,43 @@
   }
   .modal-overlay.open{display:flex;}
   .modal-box{
-    position:relative; background:#fff; color:#1a1a1a; max-width:400px; width:100%;
-    border-radius:18px; border:2px solid #ef4444; padding:30px 26px 26px; text-align:center;
+    position:relative; background:#fff; color:#1a1a1a; max-width:380px; width:100%;
+    border-radius:16px; border:2px solid #ef4444; padding:22px 22px 18px; text-align:center;
     box-shadow:0 20px 60px rgba(0,0,0,0.5);
-    max-height:90vh; overflow-y:auto;
+    max-height:92vh; overflow-y:auto;
   }
   .modal-close{
-    position:absolute; top:14px; right:16px; background:none; border:none; font-size:20px;
+    position:absolute; top:10px; right:12px; background:none; border:none; font-size:18px;
     color:#9aa0a6; cursor:pointer; line-height:1;
   }
-  .modal-alert-icon{font-size:28px; margin-bottom:8px;}
-  .modal-title{font-size:19px; font-weight:900; color:#111; line-height:1.3; margin-bottom:10px;}
-  .modal-subtitle{font-size:12.5px; font-weight:800; color:#ef4444; letter-spacing:0.3px; margin-bottom:16px;}
-  .modal-body-text{font-size:13.5px; color:#3c4043; line-height:1.55; margin-bottom:18px;}
+  .modal-alert-icon{font-size:22px; margin-bottom:4px;}
+  .modal-title{font-size:16px; font-weight:900; color:#111; line-height:1.25; margin-bottom:6px;}
+  .modal-subtitle{font-size:11px; font-weight:800; color:#ef4444; letter-spacing:0.3px; margin-bottom:10px;}
+  .modal-body-text{font-size:12px; color:#3c4043; line-height:1.4; margin-bottom:12px;}
   .modal-body-text b{color:#111;}
   .modal-price-box{
-    border:1.5px dashed var(--cyan); border-radius:12px; padding:16px; margin-bottom:20px;
+    border:1.5px dashed var(--cyan); border-radius:10px; padding:10px; margin-bottom:14px;
     background:rgba(255,214,10,0.06);
   }
-  .modal-old-price{font-size:13px; color:#9aa0a6; text-decoration:line-through; margin-bottom:4px;}
-  .modal-new-price{font-size:30px; font-weight:900; color:#e11d2e; margin-bottom:10px;}
+  .modal-old-price{font-size:12px; color:#9aa0a6; text-decoration:line-through; margin-bottom:2px;}
+  .modal-new-price{font-size:24px; font-weight:900; color:#e11d2e; margin-bottom:6px;}
   .modal-coupon-timer{
-    display:flex; align-items:center; justify-content:center; gap:8px; font-size:12px; font-weight:700; color:#3c4043;
-    background:#fff5f5; border:1px solid #fecaca; border-radius:10px; padding:10px 14px; margin-top:14px;
+    display:flex; align-items:center; justify-content:center; gap:6px; font-size:11px; font-weight:700; color:#3c4043;
+    background:#fff5f5; border:1px solid #fecaca; border-radius:8px; padding:6px 10px; margin-top:8px;
   }
   .modal-coupon-timer span{
-    background:#e11d2e; color:#fff; font-weight:800; padding:4px 10px; border-radius:6px; font-size:13px;
+    background:#e11d2e; color:#fff; font-weight:800; padding:2px 8px; border-radius:5px; font-size:11.5px;
     letter-spacing:0.5px; box-shadow:0 2px 8px rgba(225,29,46,0.35);
   }
   .modal-btn-yes{
     display:block; width:100%; text-align:center; text-decoration:none;
-    background:#22c55e; color:#fff; font-weight:800; font-size:14px;
-    padding:15px; border-radius:12px; margin-bottom:10px;
+    background:#22c55e; color:#fff; font-weight:800; font-size:13px;
+    padding:12px; border-radius:10px; margin-bottom:8px;
   }
   .modal-btn-no{
     display:block; width:100%; text-align:center; text-decoration:none;
-    background:#991b1b; color:#fff; font-weight:700; font-size:12.5px;
-    padding:13px; border-radius:12px; opacity:0.9;
+    background:#991b1b; color:#fff; font-weight:700; font-size:11.5px;
+    padding:10px; border-radius:10px; opacity:0.9;
   }
   .footer-brand{font-size:22px; font-weight:800; margin-bottom:18px;}
   .footer-label{font-size:13px; color:var(--text-dim); margin-bottom:6px;}
@@ -489,6 +489,28 @@
 </style>
 </head>
 <body>
+
+<script>
+  function plainImgFallback(img){
+    var div = document.createElement('div');
+    div.className = 'plain-ph';
+    div.textContent = '🖼 ' + (img.getAttribute('data-name') || 'imagem');
+    img.replaceWith(div);
+  }
+
+  function reviewPhotoFallback(img){
+    var wrap = img.parentElement;
+    wrap.classList.add('ph-fallback');
+    var name = img.getAttribute('data-name') || 'foto';
+    var icon = document.createElement('span');
+    icon.className = 'ph-icon';
+    icon.textContent = '📷';
+    var label = document.createElement('span');
+    label.className = 'ph-label';
+    label.textContent = name;
+    img.replaceWith(icon, label);
+  }
+</script>
 
 <div class="urgency-bar"><span>⚠️</span>ATENÇÃO: Essa oferta é válida somente hoje <span id="today-date"></span></div>
 
@@ -968,26 +990,6 @@
   function closeUpsellModal(){
     document.getElementById('upsell-overlay').classList.remove('open');
     clearInterval(modalTimerInterval);
-  }
-
-  function plainImgFallback(img){
-    var div = document.createElement('div');
-    div.className = 'plain-ph';
-    div.textContent = '🖼 ' + (img.getAttribute('data-name') || 'imagem');
-    img.replaceWith(div);
-  }
-
-  function reviewPhotoFallback(img){
-    var wrap = img.parentElement;
-    wrap.classList.add('ph-fallback');
-    var name = img.getAttribute('data-name') || 'foto';
-    var icon = document.createElement('span');
-    icon.className = 'ph-icon';
-    icon.textContent = '📷';
-    var label = document.createElement('span');
-    label.className = 'ph-label';
-    label.textContent = name;
-    img.replaceWith(icon, label);
   }
 
   (function(){
