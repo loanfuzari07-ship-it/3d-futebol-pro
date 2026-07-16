@@ -840,7 +840,7 @@
         </ul>
         <div class="price-anchor"><span class="old-price">R$ 97,90</span></div>
         <div class="amount">R$ 17,90</div>
-        <a href="https://pay.wiapy.com/SKR9SaWWByiu" class="cta-btn" onclick="return openUpsellModal(event)">QUERO O PLANO BÁSICO</a>
+        <a href="javascript:void(0)" class="cta-btn" onclick="openUpsellModal(event); return false;">QUERO O PLANO BÁSICO</a>
       </div>
 
       <div class="price-card complete">
@@ -984,7 +984,7 @@
   }
 
   function openUpsellModal(e){
-    if (e) e.preventDefault();
+    if (e) { e.preventDefault(); e.stopPropagation(); }
     document.getElementById('upsell-overlay').classList.add('open');
     startModalCountdown();
     return false;
