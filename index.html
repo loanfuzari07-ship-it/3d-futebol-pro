@@ -85,9 +85,12 @@
       radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255,214,10,0.16), transparent 60%),
       var(--bg);
   }
+  @media (max-width:600px){
+    .hero{padding-top:36px;}
+  }
   .hero .eyebrow{margin-bottom:26px;}
-  .hero h1{font-size:clamp(28px, 4.4vw, 46px); line-height:1.18; max-width:880px; margin:0 auto 22px;}
-  .hero .lead{max-width:640px; margin:0 auto 34px; color:var(--text-dim); font-size:16px;}
+  .hero h1{font-size:clamp(28px, 4.4vw, 46px); line-height:1.18; max-width:880px; margin:0 auto 34px;}
+  .hero .lead{max-width:640px; margin:28px auto 0; color:var(--text-dim); font-size:16px;}
   .hero-figure{
     position:relative;
     max-width:640px; margin:0 auto;
@@ -126,10 +129,15 @@
   .avaliar-image{display:block; max-width:140px; width:100%; height:auto; margin:14px auto 0;}
   .stars span{color:var(--text-faint); margin-left:6px; font-size:13px;}
   .trust-row{
-    display:flex; justify-content:center; gap:26px; flex-wrap:wrap;
-    margin-top:22px; font-size:12.5px; color:var(--text-faint);
+    display:flex; justify-content:center; gap:14px; flex-wrap:wrap;
+    margin-top:28px; font-size:12.5px; color:var(--text);
   }
-  .trust-row span{display:flex; align-items:center; gap:6px;}
+  .trust-card{
+    display:flex; align-items:center; gap:8px;
+    background:var(--card); border:1px solid var(--card-border); border-radius:12px;
+    padding:12px 18px; font-weight:600;
+  }
+  .trust-card span{font-size:15px;}
 
   /* ---------- PAIN / GAIN ---------- */
   .split{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:44px;}
@@ -364,8 +372,9 @@
   .price-anchor{font-size:13px; color:var(--text-faint); margin-top:6px;}
   .price-anchor .old-price{font-size:13px;}
   .price-card .amount{font-size:38px; font-weight:900; color:#fff; margin-top:2px; margin-bottom:8px;}
-  .price-card.basic .amount{margin-bottom:26px;}
-  .installment-note{font-size:12px; color:var(--text-faint); margin-bottom:22px; font-weight:600; letter-spacing:0.2px;}
+  .price-card.basic .amount{margin-bottom:0;}
+  .installment-note{font-size:12px; color:var(--text-faint); font-weight:600; letter-spacing:0.2px;}
+  .price-divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); margin:18px 0;}
   .price-card .amount.amount-green{color:var(--green);}
   .price-card .amount span{font-size:14px; color:var(--text-dim); font-weight:400;}
   .price-list{list-style:none; text-align:left; margin:22px 0; font-size:13.5px; flex:1;}
@@ -395,7 +404,7 @@
   .trust-embed{display:block; width:100%; height:auto; margin:0; padding:0; border:none;}
   .cta-btn + .trust-embed{margin-top:18px;}
   .trust-embed + .trust-embed{margin-top:8px;}
-  .mockhero-image{display:block; width:320px; max-width:90%; height:auto; margin:0 auto 20px; padding:0; border:none;}
+  .mockhero-image{display:block; width:320px; max-width:90%; height:auto; margin:0 auto 8px; padding:0; border:none;}
   .plain-ph{display:block; text-align:center; font-size:9px; color:var(--text-faint); padding:4px 0;}
   .pay-icons{display:flex; justify-content:center; gap:14px; margin-top:18px; font-size:11px; color:var(--text-faint);}
 
@@ -467,15 +476,13 @@
   }
 </script>
 
-<div class="urgency-bar"><span>⚠️</span>ATENÇÃO: Essa oferta é válida somente hoje <span id="today-date"></span></div>
+<div class="urgency-bar"><span>⚠️</span>OFERTA ESPECIAL VÁLIDA SOMENTE HOJE <span id="today-date"></span></div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">Lançamento Exclusivo</span>
     <h1>Aproveite a maior oportunidade para <span class="glow-text">LUCRAR 3X MAIS</span> com sua impressora 3D ainda esse mês: o <span class="glow-text">Pack Futebol 3D Pro</span>!</h1>
-
-    <p class="lead">Tenha acesso a mais de <strong class="glow-text" style="text-transform:uppercase;">60 modelos STL validados</strong> de mascotes e estádios do futebol brasileiro, prontos para imprimir e lucrar. Peças com acabamento premium ultra realista que <span class="glow-text">vendem muito mais</span> que impressões comuns!</p>
 
     <div class="hero-figure">
       <div class="stage">
@@ -485,11 +492,12 @@
       </div>
     </div>
 
-    <div class="stars">★★★★★ <span>4,9/5 em mais de 1.200 avaliações</span></div>
+    <p class="lead">Tenha acesso a mais de <strong class="glow-text" style="text-transform:uppercase;">60 modelos STL validados</strong> de mascotes e estádios do futebol brasileiro com acabamento premium ultra realista, prontos para imprimir e <span class="glow-text">lucrar muito mais!</span></p>
+
     <div class="trust-row">
-      <span>⚡ Download imediato</span>
-      <span>🛡️ Garantia de 14 dias</span>
-      <span>✅ Sem mensalidades</span>
+      <div class="trust-card"><span>⚡</span> Download imediato</div>
+      <div class="trust-card"><span>🛡️</span> Garantia de 14 dias</div>
+      <div class="trust-card"><span>✅</span> Sem mensalidades</div>
     </div>
   </div>
 </section>
@@ -752,7 +760,7 @@
   <div class="wrap">
     <span class="eyebrow" style="display:block; width:fit-content; margin:0 auto 18px;">Liberado gratuitamente hoje</span>
     <h2 class="center" style="font-size:clamp(22px,3vw,30px);">Leve <span class="glow-text">+10 Coleções Premium</span> de bônus</h2>
-    <p class="center muted" style="margin-top:10px;">Aumente seu ticket médio e lucre ainda mais com combos exclusivos. Ao garantir o pack hoje, você leva todo o nosso acervo mais vendido sem pagar um centavo a mais.</p>
+    <p class="center muted" style="margin-top:10px;">Ao garantir o pack hoje, você leva todo o nosso acervo mais vendido sem pagar um centavo a mais.</p>
     <div class="bonus-grid">
       <div class="bonus-card"><span class="bonus-badge">BÔNUS 1</span><div class="bonus-thumb"><img class="bonus-thumb-img" src="images/bonus1.webp" data-name="bonus1.webp" alt="" onerror="reviewPhotoFallback(this)"></div><div class="bonus-body"><h5>Pack Veículos 3D Profissionais</h5><p>Modelos de carros, motos, caminhões e miniaturas para fãs e colecionadores.</p><div class="bonus-price-row"><span class="old-price">R$ 39,90</span><span class="free-pill">GRÁTIS</span></div></div></div>
       <div class="bonus-card"><span class="bonus-badge">BÔNUS 2</span><div class="bonus-thumb"><img class="bonus-thumb-img" src="images/bonus2.webp" data-name="bonus2.webp" alt="" onerror="reviewPhotoFallback(this)"></div><div class="bonus-body"><h5>Coleção Heróis da Marvel</h5><p>Uma seleção de personagens, símbolos e acessórios para peças decorativas e colecionáveis.</p><div class="bonus-price-row"><span class="old-price">R$ 29,90</span><span class="free-pill">GRÁTIS</span></div></div></div>
@@ -776,15 +784,19 @@
     <div class="pricing-grid">
       <div class="price-card basic">
         <div class="plan-name">Pack Básico 3D Futebol Pro</div>
+
+        <div class="price-divider"></div>
+        <div class="price-anchor"><span class="old-price">R$ 97,90</span></div>
+        <div class="amount">R$ 17,90</div>
+        <div class="price-divider"></div>
+
         <ul class="price-list">
           <li>Pack com +60 modelos STL ultra realistas de mascotes e estádios do futebol</li>
           <li>Sem os demais bônus</li>
           <li>Acesso vitalício</li>
           <li>Liberado para venda e edição</li>
         </ul>
-        <div class="price-anchor"><span class="old-price">R$ 97,90</span></div>
-        <div class="amount">R$ 17,90</div>
-        <a href="https://pay.wiapy.com/SKR9SaWWByiu" class="cta-btn">QUERO O PLANO BÁSICO</a>
+        <a href="https://pay.wiapy.com/SKR9SaWWByiu" class="cta-btn">QUERO O PACK BÁSICO</a>
       </div>
 
       <div class="price-card complete">
@@ -792,6 +804,13 @@
         <div class="plan-name glow-text">Pack Premium 3D Futebol Pro</div>
         <div class="countdown-badge">⏱ EXPIRA EM: <span id="premium-countdown">20:00</span></div>
         <img class="mockhero-image" src="images/mockhero.webp" data-name="mockhero.webp (500x500)" alt="" onerror="plainImgFallback(this)">
+
+        <div class="price-divider"></div>
+        <div class="price-anchor"><span class="old-price">R$ 197,90</span></div>
+        <div class="amount amount-green">R$ 27,90</div>
+        <div class="installment-note">OU ATÉ 4X DE R$ 7,85</div>
+        <div class="price-divider"></div>
+
         <ul class="price-list">
           <li>Pack com +60 modelos STL ultra realistas de mascotes e estádios do futebol</li>
           <li>Liberado para venda e edição</li>
@@ -808,10 +827,7 @@
           <li>Acesso vitalício e imediato</li>
           <li>Garantia de 14 dias</li>
         </ul>
-        <div class="price-anchor"><span class="old-price">R$ 197,90</span></div>
-        <div class="amount amount-green">R$ 27,90</div>
-        <div class="installment-note">OU ATÉ 4X DE R$ 7,85</div>
-        <a href="https://pay.wiapy.com/_BOYVuMhDqbJ" class="cta-btn">GARANTIR O PLANO PREMIUM</a>
+        <a href="https://pay.wiapy.com/_BOYVuMhDqbJ" class="cta-btn">GARANTIR O PACK PREMIUM</a>
         <img class="trust-embed" src="images/seguro.webp" data-name="seguro.webp" alt="" onerror="plainImgFallback(this)">
         <img class="trust-embed" src="images/pagamentos.webp" data-name="pagamentos.webp" alt="" onerror="plainImgFallback(this)">
       </div>
