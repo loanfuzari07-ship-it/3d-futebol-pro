@@ -179,7 +179,7 @@
     background:var(--card); color:var(--cyan); display:flex; align-items:center; justify-content:center;
     cursor:pointer; font-size:16px; flex:none;
   }
-  .car-track{display:flex; gap:18px; overflow-x:auto; max-width:600px; width:100%; scroll-behavior:smooth; scrollbar-width:none;}
+  .car-track{display:flex; gap:18px; overflow-x:auto; flex:1; min-width:0; max-width:600px; scroll-behavior:smooth; scrollbar-width:none;}
   .car-track::-webkit-scrollbar{display:none;}
   .car-item{
     flex:0 0 calc((100% - 36px) / 3); border-radius:14px; overflow:hidden; text-align:center;
@@ -196,9 +196,8 @@
   .car-thumb.ph-fallback .ph-icon{font-size:24px; opacity:0.5;}
   .car-thumb.ph-fallback .ph-label{font-size:9px; color:#9aa0a6; text-align:center; padding:0 6px;}
   .car-item span{display:block; padding:10px 6px; font-size:13px; color:var(--text-dim);}
-  @media (max-width:700px){
+  @media (max-width:820px){
     .car-item{flex:0 0 100%;}
-    .car-track{max-width:260px;}
   }
 
   /* ---------- TESTIMONIALS (Google-style marquee) ---------- */
