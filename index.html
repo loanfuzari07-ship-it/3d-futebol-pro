@@ -210,16 +210,23 @@
   .feat-card p{font-size:13.5px; color:var(--text-dim);}
 
   /* ---------- CAROUSEL ---------- */
-  .carousel{display:flex; align-items:center; gap:16px; justify-content:center; margin-top:36px;}
+  .carousel{position:relative; margin-top:36px;}
   .car-arrow{
-    width:36px; height:36px; border-radius:50%; border:1px solid var(--card-border);
-    background:var(--card); color:var(--cyan); display:flex; align-items:center; justify-content:center;
-    cursor:pointer; font-size:16px; flex:none;
+    position:absolute; top:50%; transform:translateY(-50%); z-index:5;
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--card-border);
+    background:rgba(10,10,10,0.85); color:var(--cyan); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:15px; box-shadow:0 4px 16px rgba(0,0,0,0.45);
   }
-  .car-track{display:flex; gap:18px; overflow-x:auto; flex:1; min-width:0; max-width:600px; scroll-behavior:smooth; scrollbar-width:none;}
+  .car-arrow:first-child{left:-4px;}
+  .car-arrow:last-child{right:-4px;}
+  .car-track{
+    display:flex; gap:16px; overflow-x:auto; width:100%; max-width:640px; margin:0 auto;
+    scroll-behavior:smooth; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; padding:0 2px;
+  }
   .car-track::-webkit-scrollbar{display:none;}
   .car-item{
-    flex:0 0 calc((100% - 36px) / 3); border-radius:14px; overflow:hidden; text-align:center;
+    flex:0 0 calc((100% - 32px) / 3); scroll-snap-align:start; border-radius:14px; overflow:hidden; text-align:center;
     background:var(--card); border:1px solid var(--card-border);
   }
   .car-thumb{
@@ -234,7 +241,12 @@
   .car-thumb.ph-fallback .ph-label{font-size:9px; color:#9aa0a6; text-align:center; padding:0 6px;}
   .car-item span{display:block; padding:10px 6px; font-size:13px; color:var(--text-dim);}
   @media (max-width:820px){
-    .car-item{flex:0 0 100%;}
+    .car-item{flex:0 0 62%;}
+    .car-arrow:first-child{left:0;}
+    .car-arrow:last-child{right:0;}
+  }
+  @media (max-width:480px){
+    .car-item{flex:0 0 72%;}
   }
 
   /* ---------- TESTIMONIALS (Google-style marquee) ---------- */
@@ -424,7 +436,7 @@
   .price-card.basic .amount{margin-bottom:0;}
   .installment-note{font-size:12px; color:var(--text-faint); font-weight:600; letter-spacing:0.2px;}
   .price-divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); margin:18px 0;}
-  .price-card .amount.amount-green{color:var(--green);}
+  .price-card .amount.amount-green{color:#22e885; text-shadow:0 0 18px rgba(34,232,133,0.45);}
   .price-card .amount span{font-size:14px; color:var(--text-dim); font-weight:400;}
   .price-list{list-style:none; text-align:left; margin:22px 0; font-size:13.5px; flex:1;}
   .price-list > li{display:flex; gap:14px; padding:9px 0; color:var(--text-dim); align-items:flex-start;}
@@ -821,7 +833,6 @@
           <li>Sem os demais bônus</li>
           <li>Acesso vitalício</li>
           <li>Liberado para venda e edição</li>
-          <li>Arquivos organizados na área de membros</li>
           <li>Pagamento único</li>
         </ul>
         <a href="https://pay.wiapy.com/SKR9SaWWByiu" class="cta-btn">QUERO O PACK BÁSICO</a>
