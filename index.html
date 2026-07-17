@@ -255,8 +255,9 @@
     -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
     mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
-  .review-track{display:flex; gap:18px; width:max-content; animation:review-scroll 34s linear infinite;}
+  .review-track{display:flex; gap:18px; width:max-content; animation:review-scroll 110s linear infinite;}
   .review-marquee:hover .review-track{animation-play-state:paused;}
+  .review-track.is-touched{animation-play-state:paused;}
   @keyframes review-scroll{
     from{transform:translateX(0);}
     to{transform:translateX(-50%);}
@@ -1013,6 +1014,10 @@
     Array.from(reviewTrack.children).forEach(function(card){
       reviewTrack.appendChild(card.cloneNode(true));
     });
+    reviewTrack.addEventListener('touchstart', function(){ reviewTrack.classList.add('is-touched'); }, {passive:true});
+    reviewTrack.addEventListener('touchend', function(){
+      setTimeout(function(){ reviewTrack.classList.remove('is-touched'); }, 1500);
+    }, {passive:true});
   }
 </script>
 </body>
