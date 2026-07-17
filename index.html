@@ -25,14 +25,14 @@
 <style>
   :root{
     --bg: #04050a;
-    --bg-soft: #141c31;
-    --card: #0f1422;
-    --card-border: #1c2436;
+    --bg-soft: #17171a;
+    --card: #121214;
+    --card-border: #262626;
     --cyan: #ffd60a;
     --cyan-soft: #fff08a;
     --blue-glow: rgba(255,214,10,0.35);
     --red: #f43f5e;
-    --red-glow: rgba(244,63,94,0.25);
+    --red-glow: rgba(255,214,10,0.25);
     --green: #34d399;
     --text: #e7edf5;
     --text-dim: #93a1b7;
@@ -56,7 +56,7 @@
     content:"";
     position:absolute; top:0; left:50%; transform:translateX(-50%);
     width:min(1100px, 92%); height:1px;
-    background:linear-gradient(90deg, transparent, rgba(148,163,184,0.22) 20%, rgba(148,163,184,0.22) 80%, transparent);
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.14) 20%, rgba(255,255,255,0.14) 80%, transparent);
   }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
@@ -72,7 +72,7 @@
   h1,h2,h3{font-weight:800; letter-spacing:-0.02em;}
   .glow-text{
     color:var(--cyan);
-    text-shadow:0 0 18px rgba(255,214,10,0.55), 0 0 40px rgba(255,214,10,0.25);
+
   }
   .center{text-align:center;}
   .muted{color:var(--text-dim);}
@@ -95,9 +95,9 @@
     position:relative;
     max-width:640px; margin:0 auto;
     border-radius:20px;
-    background:linear-gradient(145deg, #131a2a, #0a0e18);
+    background:linear-gradient(145deg, #1a1a1c, #0a0a0a);
     border:1px solid var(--card-border);
-    box-shadow:0 0 0 1px rgba(255,214,10,0.06), 0 30px 80px -20px rgba(255,214,10,0.25);
+    box-shadow:0 0 0 1px rgba(255,214,10,0.04), 0 20px 50px -22px rgba(255,214,10,0.12);
     padding:10px;
   }
   .hero-figure .badge-corner{
@@ -150,7 +150,7 @@
     border-radius:16px; padding:28px 26px; border:1px solid var(--card-border);
     background:var(--card);
   }
-  .panel.pain{border-color:rgba(244,63,94,0.35); box-shadow:0 0 40px -18px var(--red-glow);}
+  .panel.pain{border-color:rgba(255,214,10,0.35); box-shadow:0 0 40px -18px var(--red-glow);}
   .panel.gain{border-color:rgba(255,214,10,0.35); box-shadow:0 0 40px -18px var(--blue-glow);}
   .panel h3{font-size:16px; display:flex; align-items:center; gap:8px; margin-bottom:16px;}
   .panel.pain h3{color:var(--red);}
@@ -160,6 +160,31 @@
   .panel li:first-child{border-top:none;}
   .panel.pain li::before{content:"✕"; color:var(--red); font-weight:700;}
   .panel.gain li::before{content:"✓"; color:var(--cyan); font-weight:700;}
+
+  /* ---------- PAIN LIST (novo) ---------- */
+  .pain-title{color:#fff; font-weight:800;}
+  .pain-title-red{color:var(--red);}
+  .pain-list{max-width:640px; margin:44px auto 0; display:flex; flex-direction:column; gap:16px;}
+  .pain-row{
+    display:flex; align-items:center; gap:14px;
+    background:#0b0e17; border:1px solid var(--card-border); border-radius:14px;
+    padding:18px 22px; font-weight:700; font-size:13.5px; letter-spacing:0.2px;
+    text-transform:uppercase; color:var(--text);
+  }
+  .pain-x{
+    color:var(--red); font-weight:800; font-size:15px; flex:none;
+  }
+  .pain-footer{text-align:center; margin-top:48px;}
+  .pain-footer h3{
+    color:#fff; font-weight:800; font-size:clamp(16px,2.2vw,20px);
+    text-transform:uppercase; letter-spacing:0.3px;
+  }
+  .pain-footer p{
+    margin-top:10px; font-style:italic; color:var(--text-dim); font-size:14px;
+  }
+  @media (max-width:600px){
+    .pain-row{padding:16px 18px; font-size:12.5px;}
+  }
 
   /* ---------- FEATURE CARDS ---------- */
   .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px;}
@@ -173,7 +198,7 @@
   .feat-card:hover{transform:translateY(-4px); border-color:rgba(255,214,10,0.4);}
   .grafico-image-wrap{
     max-width:800px; margin:40px auto 0; border-radius:16px; overflow:hidden;
-    box-shadow:0 0 0 1px rgba(255,214,10,0.15), 0 0 70px -10px var(--blue-glow), 0 0 140px -30px var(--blue-glow);
+    box-shadow:0 0 0 1px rgba(255,214,10,0.08), 0 0 40px -12px rgba(255,214,10,0.18), 0 0 90px -35px rgba(255,214,10,0.18);
   }
   .grafico-image{display:block; width:100%; height:auto; aspect-ratio:1658/806; object-fit:cover; background:#f1f3f4;}
   .feat-icon{
@@ -258,7 +283,7 @@
   .review-text{font-size:13px; color:#3c4043; line-height:1.5;}
   .verified-badge{
     display:inline-flex; align-items:center; gap:4px; font-size:10.5px; font-weight:600;
-    color:#1a73e8; margin-top:4px;
+    color:#9aa3af; margin-top:4px;
   }
   .g-icon{width:14px; height:14px; flex:none;}
   .review-photos{display:flex; gap:6px; margin-top:12px;}
@@ -275,39 +300,59 @@
   .review-photo-wrap.ph-fallback .ph-label{font-size:8.5px; color:#9aa0a6; text-align:center; padding:0 4px;}
 
   /* ---------- MARKET PROOF ---------- */
-  .proof-wrap{display:grid; grid-template-columns:0.85fr 1fr; gap:26px; margin-top:40px; align-items:start;}
-  @media (max-width:860px){.proof-wrap{grid-template-columns:1fr;}}
-  .proof-image-wrap{
-    position:relative; width:100%; aspect-ratio:864/1536; border-radius:16px; overflow:hidden;
-    background:#f1f3f4;
-    box-shadow:0 0 0 1px rgba(255,214,10,0.15), 0 0 60px -10px var(--blue-glow), 0 0 120px -30px var(--blue-glow);
+  .proof-two-col{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+    margin-top:40px; align-items:start;
   }
-  .proof-image{width:100%; height:100%; object-fit:cover; display:block;}
-  .proof-image-wrap.ph-fallback{
-    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;
-    border:1.5px dashed #c7cbd1; background:#f8f9fa;
+  @media (max-width:800px){
+    .proof-two-col{grid-template-columns:1fr; gap:32px;}
   }
-  .proof-image-wrap.ph-fallback .ph-icon{font-size:34px; opacity:0.5;}
-  .proof-image-wrap.ph-fallback .ph-label{font-size:12px; color:#9aa0a6; text-align:center; padding:0 16px;}
-  .stat-cards{display:flex; flex-direction:column; gap:14px;}
-  .stat-card{
-    background:var(--card); border:1px solid var(--card-border); border-radius:14px; padding:16px 18px;
-    display:flex; justify-content:space-between; align-items:center; gap:14px;
+  .proof-gallery{
+    display:flex; flex-direction:column; gap:14px;
   }
-  .stat-card h4{color:var(--cyan); font-size:14px; margin-bottom:8px; line-height:1.3;}
-  .stat-line{font-size:12px; color:var(--text-dim); margin-bottom:2px;}
-  .stat-line b{color:#fff; font-weight:700;}
-  .stat-profit-box{
-    flex:none; text-align:center; background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.4);
-    border-radius:10px; padding:8px 14px;
+  .proof-gallery-img{
+    width:100%; aspect-ratio:864/464; border-radius:14px; overflow:hidden;
+    background:#f1f3f4; border:1px solid var(--card-border);
+    box-shadow:0 6px 24px -10px rgba(0,0,0,0.5);
   }
-  .stat-profit-box .label{font-size:9px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:2px;}
-  .stat-profit-box .value{font-size:15px; font-weight:800; color:var(--green); white-space:nowrap;}
-  .stat-total{
-    background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.4); border-radius:14px;
+  .proof-gallery-img img{width:100%; height:100%; object-fit:cover; display:block;}
+  .proof-stats-grid{
+    display:flex; flex-direction:column; gap:18px; height:100%;
+    justify-content:center;
+  }
+  .proof-stat-card{
+    background:var(--card); border:1px solid var(--card-border); border-radius:16px;
+    padding:22px 20px; display:flex; flex-direction:column;
+  }
+  .proof-stat-card h4{
+    color:var(--cyan); font-size:14.5px; line-height:1.35; margin-bottom:12px;
+  }
+  .proof-stat-card h4 span{color:var(--text-faint); font-weight:400; font-size:12.5px;}
+  .proof-stat-line{font-size:12.5px; color:var(--text-dim); margin-bottom:4px;}
+  .proof-stat-line b{color:#fff; font-weight:700;}
+  .proof-stat-profit{
+    margin-top:16px; text-align:center; background:rgba(52,211,153,0.08);
+    border:1px solid rgba(52,211,153,0.4); border-radius:10px; padding:10px 14px;
+  }
+  .proof-stat-profit .label{font-size:9.5px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:3px;}
+  .proof-stat-profit .value{font-size:17px; font-weight:800; color:var(--green);}
+  .proof-stat-total{
+    background:rgba(52,211,153,0.08); border:1px solid rgba(52,211,153,0.4); border-radius:16px;
     padding:20px; text-align:center;
   }
-  .stat-total .amount{font-size:30px; font-weight:900; color:var(--green);}
+  .proof-stat-total .label{font-size:12px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:6px;}
+  .proof-stat-total .value{font-size:26px; font-weight:900; color:var(--green);}
+  .proof-disclaimer{
+    text-align:center; font-size:11px; font-style:italic; color:var(--text-faint);
+    margin-top:2px;
+  }
+  .proof-cta{
+    display:block; width:100%; max-width:420px; margin:36px auto 0;
+    text-align:center; text-decoration:none; font-weight:800; letter-spacing:0.2px;
+    padding:16px; border-radius:12px; font-size:14px;
+    background:linear-gradient(90deg,var(--cyan),#ffab00); color:#241800;
+    box-shadow:0 0 30px rgba(255,214,10,0.5);
+  }
 
   /* ---------- BONUS GRID ---------- */
   .bonus-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:38px;}
@@ -354,7 +399,7 @@
     background:var(--card); border:1px solid var(--card-border);
   }
   .price-card.complete{
-    background:linear-gradient(180deg,#0f1c26,#0a0e16);
+    background:linear-gradient(180deg,#1c1c1f,#0a0a0a);
     border:1px solid rgba(255,214,10,0.4);
     box-shadow:0 0 60px -20px var(--blue-glow);
   }
@@ -367,7 +412,7 @@
   .price-card .plan-name{font-size:18px; font-weight:800; color:#fff; margin-bottom:16px; line-height:1.25;}
   .countdown-badge{
     display:inline-flex; align-items:center; gap:6px; width:fit-content; margin:0 auto 20px;
-    background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.4); color:#fca5a5;
+    background:rgba(255,214,10,0.12); border:1px solid rgba(255,214,10,0.4); color:#fca5a5;
     font-weight:800; font-size:12px; padding:6px 14px; border-radius:999px;
   }
   .price-card.basic .plan-name{color:#fff;}
@@ -486,7 +531,7 @@
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow">Lançamento Exclusivo</span>
-    <h1>Aproveite a maior oportunidade para <span class="glow-text">LUCRAR 3X MAIS</span> com sua impressora 3D ainda esse mês: o <span class="glow-text">Pack Futebol 3D Pro</span>!</h1>
+    <h1 style="text-transform:uppercase;">Pare de imprimir modelos que ninguém compra e venda 3X mais com o <span class="glow-text">3D Futebol Pro</span>!</h1>
 
     <div class="hero-figure">
       <div class="stage">
@@ -496,12 +541,12 @@
       </div>
     </div>
 
-    <p class="lead">Tenha acesso a mais de <strong class="glow-text" style="text-transform:uppercase;">60 modelos STL validados</strong> de mascotes e estádios do futebol brasileiro com acabamento premium ultra realista, prontos para imprimir e <span class="glow-text">lucrar muito mais!</span></p>
+    <p class="lead">São <strong class="glow-text" style="text-transform:uppercase;">60 modelos STL</strong> de mascotes premium e estádios do futebol brasileiro prontos pra imprimir, <span class="glow-text">testados e validados nos marketplaces</span>. Garanta 3x mais lucro com peças exclusivas que vendem muito mais rápido.</p>
 
     <div class="trust-row">
       <div class="trust-card"><span>⚡</span> Download imediato</div>
       <div class="trust-card"><span>🛡️</span> Garantia de 14 dias</div>
-      <div class="trust-card"><span>✅</span> Sem mensalidades</div>
+      <div class="trust-card"><span>✅</span> Acesso vitalício</div>
     </div>
   </div>
 </section>
@@ -509,27 +554,22 @@
 <!-- PAIN / GAIN -->
 <section class="band-b">
   <div class="wrap">
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px);">Cansado de imprimir e não vender?</h2>
-    <p class="center muted" style="margin-top:10px;">Você está perdendo dinheiro sem nem perceber tentando vender o mesmo que todos...</p>
-    <div class="split">
-      <div class="panel pain">
-        <h3>⚠ O problema que você já conhece</h3>
-        <ul>
-          <li>Horas perdidas buscando modelos que ninguém compra</li>
-          <li>Preso nos mesmos nichos saturados de sempre</li>
-          <li>Filamento gasto em peças que encalham no estoque</li>
-          <li>Produtos genéricos que não despertam desejo no cliente</li>
-        </ul>
-      </div>
-      <div class="panel gain">
-        <h3>✓ Com o Pack Futebol 3D Pro</h3>
-        <ul>
-          <li>60 modelos validados no nicho mais aquecido do momento</li>
-          <li>Entrada num mercado com alta demanda e baixa concorrência</li>
-          <li>Peças de alta procura para presentes, decoração e coleção</li>
-          <li>Portfólio completo e exclusivo em um único acesso</li>
-        </ul>
-      </div>
+    <h2 class="center pain-title" style="font-size:clamp(20px,3.4vw,30px); text-transform:uppercase; line-height:1.35;">
+      Sua impressora 3D está parada porque você<br>
+      <span class="glow-text">não sabe o que vender?</span>
+    </h2>
+
+    <div class="pain-list">
+      <div class="pain-row"><span class="pain-x">✕</span><span>Você perde horas procurando STL</span></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span>Imprime arquivos que ninguém compra</span></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span>Gasta filamento com produtos aleatórios</span></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span>Não sabe o que anunciar na Shopee</span></div>
+      <div class="pain-row"><span class="pain-x">✕</span><span>Vê outras pessoas vendendo e fica sem direção</span></div>
+    </div>
+
+    <div class="pain-footer">
+      <h3>O problema não é sua impressora.</h3>
+      <p>"O problema é não ter os modelos validados que o mercado procura."</p>
     </div>
   </div>
 </section>
@@ -537,32 +577,21 @@
 <!-- WHY DIFFERENT -->
 <section class="band-a">
   <div class="wrap">
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px);">Por que esse nicho de <span class="glow-text">Futebol 3D</span> é diferente?</h2>
-    <p class="center muted" style="margin-top:10px;">O mercado está saturado de action figures comuns. Ofereça algo inovador e lucre muito mais. É simples!</p>
-    <div class="feat-grid">
-      <div class="feat-card">
-        <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg></div>
-        <h4>Ultra Realista</h4>
-        <p>O acabamento premium impressiona qualquer um gerando desejo imediato, seja pra colecionar, decorar ou presentear.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"></path></svg></div>
-        <h4>Alta Demanda em Feiras</h4>
-        <p>Peças de decoração de artigos esportivos são sucesso garantido em feiras, bazares e marketplaces.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.2 6.8H21l-5.6 4.1 2.1 6.9-5.5-4.2-5.5 4.2 2.1-6.9L3 8.8h6.8z"></path></svg></div>
-        <h4>Inovação Total</h4>
-        <p>Chega de preços de modelo comum. Um catálogo de produtos que o público considera "decoração premium".</p>
-      </div>
+    <h2 class="center" style="font-size:clamp(22px,3vw,30px); text-transform:uppercase;">O nicho mais procurado e <span class="glow-text">lucrativo</span> do momento</h2>
+    <p class="center muted" style="margin-top:10px;">Muita demanda e baixa concorrência. Saia na frente e lucre muito mais. É simples!</p>
+
+    <div class="grafico-image-wrap">
+      <img class="grafico-image" src="images/grafico.webp" data-name="grafico.webp (1658x806)" alt="Gráfico de demanda do nicho" onerror="plainImgFallback(this)">
     </div>
+    <p class="center muted" style="margin-top:14px; font-size:12.5px; font-style:italic;">Dados baseado em pesquisas nos marketplaces Shopee e Mercado Livre.</p>
   </div>
 </section>
 
 <!-- WHAT YOU'LL PRINT -->
 <section class="band-b">
   <div class="wrap">
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px);">Veja alguns modelos <span class="glow-text">disponíveis para imprimir</span></h2>
+    <h2 class="center" style="font-size:clamp(22px,3vw,30px); text-transform:uppercase;">Veja alguns modelos <span class="glow-text">disponíveis para imprimir</span></h2>
+    <p class="center muted" style="margin-top:10px;">Todos validados com alta demanda do mercado!</p>
     <div class="carousel">
       <div class="car-arrow">‹</div>
       <div class="car-track">
@@ -614,156 +643,66 @@
     <div class="feat-grid" style="margin-top:24px;">
       <div class="feat-card">
         <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"></path></svg></div>
-        <h4>Arquivos Organizados</h4>
+        <h4 style="text-transform:uppercase;">Arquivos Organizados</h4>
         <p>Catálogo com pastas individuais e organizadas, facilitando sua busca para nunca perder tempo.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg></div>
-        <h4>Modelos Multipart</h4>
+        <h4 style="text-transform:uppercase;">Modelos Multipart</h4>
         <p>Peças separadas para imprimir individualmente, facilitando a troca de cores e a montagem, sem necessidade de AMS.</p>
       </div>
       <div class="feat-card">
         <div class="feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12.5l2.3 2.3L16 10"></path></svg></div>
-        <h4>Arquivos Exaustivamente Testados</h4>
+        <h4 style="text-transform:uppercase;">Arquivos Exaustivamente Testados</h4>
         <p>Modelos STL testados para poupar filamento da sua impressora e garantir acabamentos perfeitos.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- MARKET PROOF -->
 <section class="band-a">
   <div class="wrap">
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px);">Quem já adquiriu, ta <span class="glow-text">faturando 🤑</span></h2>
-    <p class="center muted" style="margin-top:10px;">Avaliações reais de quem já aplicou os modelos do pack.</p>
-
-    <div class="review-marquee">
-      <div class="review-track" id="review-track">
-        <div class="review-card">
-          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
-          <div class="review-top">
-            <div class="review-avatar"><img class="review-avatar-img" src="images/gabriel.webp" data-name="gabriel.webp" alt="Gabriel R." onerror="reviewPhotoFallback(this)"></div>
-            <div><div class="review-name">Gabriel R.</div><div class="review-meta">há 2 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">Comprei e testei no mesmo fim de semana. O acabamento do mascote ficou impressionante, nem parece impressão 3D.</div>
-          
-        </div>
-        <div class="review-card">
-          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
-          <div class="review-top">
-            <div class="review-avatar"><img class="review-avatar-img" src="images/juan.webp" data-name="juan.webp" alt="Juan A." onerror="reviewPhotoFallback(this)"></div>
-            <div><div class="review-name">Juan A.</div><div class="review-meta">há 5 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">Configurei a impressora do jeitinho certo e já vendi as primeiras peças pra amigos. Recomendo demais.</div>
-          
-        </div>
-        <div class="review-card">
-          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
-          <div class="review-top">
-            <div class="review-avatar"><img class="review-avatar-img" src="images/marina.webp" data-name="marina.webp" alt="Marina S." onerror="reviewPhotoFallback(this)"></div>
-            <div><div class="review-name">Marina S.</div><div class="review-meta">há 1 semana</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">Levei pra feira do bairro e vendi 3 peças no primeiro dia. O acabamento chama muita atenção.</div>
-          <div class="review-photos">
-            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem1.webp" data-name="imagem1.webp" alt="Foto enviada por Marina S." onerror="reviewPhotoFallback(this)"></div>
-            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem2.webp" data-name="imagem2.webp" alt="Foto enviada por Marina S." onerror="reviewPhotoFallback(this)"></div>
-          </div>
-          
-        </div>
-        <div class="review-card">
-          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
-          <div class="review-top">
-            <div class="review-avatar"><img class="review-avatar-img" src="images/larissa.webp" data-name="larissa.webp" alt="Larissa F." onerror="reviewPhotoFallback(this)"></div>
-            <div><div class="review-name">Larissa F.</div><div class="review-meta">há 3 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">Já tinha comprado outros packs e nenhum tinha esse nível de acabamento. Valeu muito a pena.</div>
-          
-        </div>
-        <div class="review-card">
-          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
-          <div class="review-top">
-            <div class="review-avatar"><img class="review-avatar-img" src="images/pedro.webp" data-name="pedro.webp" alt="Pedro H." onerror="reviewPhotoFallback(this)"></div>
-            <div><div class="review-name">Pedro H.</div><div class="review-meta">há 2 semanas</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">Vale cada centavo, a qualidade é muito boa. E o suporte respondeu rápido quando tive dúvida.</div>
-          <div class="review-photos">
-            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem3.webp" data-name="imagem3.webp" alt="Foto enviada por Pedro H." onerror="reviewPhotoFallback(this)"></div>
-          </div>
-          
-        </div>
-        <div class="review-card">
-          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
-          <div class="review-top">
-            <div class="review-avatar"><img class="review-avatar-img" src="images/camila.webp" data-name="camila.webp" alt="Camila T." onerror="reviewPhotoFallback(this)"></div>
-            <div><div class="review-name">Camila T.</div><div class="review-meta">há 4 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <div class="review-text">Acabamento muito realista, meus clientes acham que é produto oficial da loja do time até eu explicar.</div>
-          <div class="review-photos">
-            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem4.webp" data-name="imagem4.webp" alt="Foto enviada por Camila T." onerror="reviewPhotoFallback(this)"></div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MARKET PROOF -->
-<section class="band-b">
-  <div class="wrap">
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px);">O mercado já validou: <span class="glow-text">Pack Futebol 3D Pro é lucro na certa!</span></h2>
+    <h2 class="center" style="font-size:clamp(22px,3vw,30px); text-transform:uppercase;">O mercado já validou! <span class="glow-text">Ta esperando o quê?</span></h2>
     <p class="center muted" style="margin-top:10px; max-width:640px; margin-left:auto; margin-right:auto;">
-      Esqueça as margens apertadas das peças comuns. Veja o potencial real de venda por valores premium nos maiores marketplaces do Brasil.
+      Aproveite o nicho mais lucrativo e com baixa concorrência do momento!
     </p>
-    <div class="proof-wrap">
-      <div class="proof-image-wrap">
-        <img class="proof-image" src="images/provamercado.webp" data-name="provamercado.webp (864x1536)" alt="Prova de mercado: potencial de lucro" onerror="reviewPhotoFallback(this, true)">
+    <div class="proof-two-col">
+      <div class="proof-gallery">
+        <div class="proof-gallery-img"><img src="images/provamercado1.webp" data-name="provamercado1.webp (864x464)" alt="Prova de mercado 1" onerror="plainImgFallback(this)"></div>
+        <div class="proof-gallery-img"><img src="images/provamercado2.webp" data-name="provamercado2.webp (864x464)" alt="Prova de mercado 2" onerror="plainImgFallback(this)"></div>
+        <div class="proof-gallery-img"><img src="images/provamercado3.webp" data-name="provamercado3.webp (864x464)" alt="Prova de mercado 3" onerror="plainImgFallback(this)"></div>
       </div>
-      <div class="stat-cards">
-        <div class="stat-card">
-          <div>
-            <h4>Mascote Premium <span style="color:var(--text-faint); font-weight:400;">(Ex.: mascote de São Paulo, Flamengo ou Corinthians)</span></h4>
-            <div class="stat-line">Custo médio de filamento: <b>R$ 18,00</b></div>
-            <div class="stat-line">Preço de venda estimado: <b>R$ 149,90</b></div>
-          </div>
-          <div class="stat-profit-box"><div class="label">Seu lucro bruto estimado</div><div class="value">+ R$ 131,90</div></div>
+
+      <div class="proof-stats-grid">
+        <div class="proof-stat-card">
+          <h4>Mascote Premium <span>(Ex.: mascote de São Paulo, Flamengo ou Corinthians)</span></h4>
+          <div class="proof-stat-line">Custo médio de filamento: <b>R$ 18,00</b></div>
+          <div class="proof-stat-line">Preço de venda estimado: <b>R$ 149,90</b></div>
+          <div class="proof-stat-profit"><div class="label">Seu lucro bruto estimado</div><div class="value">+ R$ 131,90</div></div>
         </div>
-        <div class="stat-card">
-          <div>
-            <h4>Estádio Colecionável 3D <span style="color:var(--text-faint); font-weight:400;">(Ex.: Allianz Parque, Nilton Santos ou Beira-Rio)</span></h4>
-            <div class="stat-line">Custo médio de filamento: <b>R$ 24,00</b></div>
-            <div class="stat-line">Preço de venda estimado: <b>R$ 179,90</b></div>
-          </div>
-          <div class="stat-profit-box"><div class="label">Seu lucro bruto estimado</div><div class="value">+ R$ 155,90</div></div>
+        <div class="proof-stat-card">
+          <h4>Estádio Colecionável 3D <span>(Ex.: Allianz Parque, Nilton Santos ou Beira-Rio)</span></h4>
+          <div class="proof-stat-line">Custo médio de filamento: <b>R$ 24,00</b></div>
+          <div class="proof-stat-line">Preço de venda estimado: <b>R$ 179,90</b></div>
+          <div class="proof-stat-profit"><div class="label">Seu lucro bruto estimado</div><div class="value">+ R$ 155,90</div></div>
         </div>
-        <div class="stat-card">
-          <div>
-            <h4>Miniatura de Mascote <span style="color:var(--text-faint); font-weight:400;">(Versão pequena ou chaveiro personalizado)</span></h4>
-            <div class="stat-line">Custo médio de filamento: <b>R$ 4,00</b></div>
-            <div class="stat-line">Preço de venda estimado: <b>R$ 44,90</b></div>
-          </div>
-          <div class="stat-profit-box"><div class="label">Seu lucro bruto estimado</div><div class="value">+ R$ 40,90</div></div>
+        <div class="proof-stat-total">
+          <div class="label">Potencial de lucro mensal inicial</div>
+          <div class="value">+ R$ 3.700,00</div>
         </div>
-        <div class="stat-total">
-          <div class="muted" style="font-size:12px;">Potencial de lucro mensal</div>
-          <div class="amount">R$ 3.900,00</div>
-        </div>
+        <p class="proof-disclaimer">*Os resultados dependem da execução de cada um*</p>
       </div>
     </div>
+    <a href="#oferta" class="proof-cta">QUERO ACESSAR OS MODELOS VALIDADOS</a>
   </div>
 </section>
 
 <!-- BONUS -->
-<section class="band-a">
+<section class="band-b">
   <div class="wrap">
     <span class="eyebrow" style="display:block; width:fit-content; margin:0 auto 18px;">Liberado gratuitamente hoje</span>
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px);">Leve <span class="glow-text">+10 Coleções Premium</span> de bônus</h2>
+    <h2 class="center" style="font-size:clamp(22px,3vw,30px); text-transform:uppercase;">Leve <span class="glow-text">+10 Coleções Premium</span> de bônus</h2>
     <p class="center muted" style="margin-top:10px;">Ao garantir o pack hoje, você leva todo o nosso acervo mais vendido sem pagar um centavo a mais.</p>
     <div class="bonus-grid">
       <div class="bonus-card"><span class="bonus-badge">BÔNUS 1</span><div class="bonus-thumb"><img class="bonus-thumb-img" src="images/bonus1.webp" data-name="bonus1.webp" alt="" onerror="reviewPhotoFallback(this)"></div><div class="bonus-body"><h5>Pack Veículos 3D Profissionais</h5><p>Modelos de carros, motos, caminhões e miniaturas para fãs e colecionadores.</p><div class="bonus-price-row"><span class="old-price">R$ 39,90</span><span class="free-pill">GRÁTIS</span></div></div></div>
@@ -780,11 +719,94 @@
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="band-b">
+<!-- TESTIMONIALS -->
+<section class="band-a">
   <div class="wrap">
-    <h2 class="center" style="font-size:clamp(22px,3vw,30px); margin-bottom:10px;">Escolha a melhor oferta pra você</h2>
-    <p class="center muted" style="margin-bottom:10px;">Pare de imprimir modelos comuns e <span class="glow-text">LUCRE 3X MAIS</span> com o nicho mais lucrativo do momento!</p>
+    <h2 class="center" style="font-size:clamp(22px,3vw,30px); text-transform:uppercase;">Quem acessou já começou a <span class="glow-text">testar e faturar</span></h2>
+    <p class="center muted" style="margin-top:10px;">Avaliações reais de quem já aplicou os modelos do pack.</p>
+
+    <div class="review-marquee">
+      <div class="review-track" id="review-track">
+        <div class="review-card">
+          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
+          <div class="review-top">
+            <div class="review-avatar"><img class="review-avatar-img" src="images/gabriel.webp" data-name="gabriel.webp" alt="Gabriel R." onerror="reviewPhotoFallback(this)"></div>
+            <div><div class="review-name">Gabriel R.</div><div class="review-meta">há 2 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#9aa3af" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Nunca tinha vendido nada online e fiquei na dúvida se ia dar certo. Imprimi um mascote do Corinthians numa PLA comum e postei no Instagram só pra testar. Vendi em menos de 24h pra um vizinho, sem entender nada de marketing.</div>
+          
+        </div>
+        <div class="review-card">
+          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
+          <div class="review-top">
+            <div class="review-avatar"><img class="review-avatar-img" src="images/juan.webp" data-name="juan.webp" alt="Juan A." onerror="reviewPhotoFallback(this)"></div>
+            <div><div class="review-name">Juan A.</div><div class="review-meta">há 5 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#9aa3af" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Minha impressora é simples, nem tenho resina nem AMS. Tava com medo de ficar tosco em filamento, mas os modelos são pensados pra isso, a textura disfarça as linhas muito bem. Vendi as primeiras peças ainda na mesma semana.</div>
+          
+        </div>
+        <div class="review-card">
+          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
+          <div class="review-top">
+            <div class="review-avatar"><img class="review-avatar-img" src="images/marina.webp" data-name="marina.webp" alt="Marina S." onerror="reviewPhotoFallback(this)"></div>
+            <div><div class="review-name">Marina S.</div><div class="review-meta">há 1 semana</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#9aa3af" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Levei 3 peças pra feira do bairro sem muita expectativa, achando que ninguém ia nem olhar. Vendi as três no primeiro dia e ainda peguei encomenda de mais duas. As pessoas param só pra perguntar se é produto oficial.</div>
+          <div class="review-photos">
+            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem1.webp" data-name="imagem1.webp" alt="Foto enviada por Marina S." onerror="reviewPhotoFallback(this)"></div>
+            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem2.webp" data-name="imagem2.webp" alt="Foto enviada por Marina S." onerror="reviewPhotoFallback(this)"></div>
+          </div>
+          
+        </div>
+        <div class="review-card">
+          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
+          <div class="review-top">
+            <div class="review-avatar"><img class="review-avatar-img" src="images/larissa.webp" data-name="larissa.webp" alt="Larissa F." onerror="reviewPhotoFallback(this)"></div>
+            <div><div class="review-name">Larissa F.</div><div class="review-meta">há 3 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#9aa3af" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Já tinha comprado uns 3 packs antes e quase todos vinham com modelo genérico que eu via em todo canto. Esse tem um nível de detalhe bem diferente, dá pra ver que foi testado antes de lançar. Recuperei o investimento na primeira venda.</div>
+          
+        </div>
+        <div class="review-card">
+          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
+          <div class="review-top">
+            <div class="review-avatar"><img class="review-avatar-img" src="images/pedro.webp" data-name="pedro.webp" alt="Pedro H." onerror="reviewPhotoFallback(this)"></div>
+            <div><div class="review-name">Pedro H.</div><div class="review-meta">há 2 semanas</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#9aa3af" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Fiquei receoso antes de comprar, é sempre um risco com pack digital. Tive uma dúvida boba sobre o slicer e o suporte respondeu ainda no mesmo dia. Isso me deu confiança pra imprimir o resto da coleção.</div>
+          <div class="review-photos">
+            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem3.webp" data-name="imagem3.webp" alt="Foto enviada por Pedro H." onerror="reviewPhotoFallback(this)"></div>
+          </div>
+          
+        </div>
+        <div class="review-card">
+          <div class="review-seal"><img class="review-seal-img" src="images/selo.webp" data-name="selo.webp" alt="Selo" onerror="reviewPhotoFallback(this)"></div>
+          <div class="review-top">
+            <div class="review-avatar"><img class="review-avatar-img" src="images/camila.webp" data-name="camila.webp" alt="Camila T." onerror="reviewPhotoFallback(this)"></div>
+            <div><div class="review-name">Camila T.</div><div class="review-meta">há 4 dias</div><div class="verified-badge"><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="#9aa3af" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Avaliação verificada</div></div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">O que mais me surpreendeu foi o realismo. Imprimi o mascote do meu time e mostrei pros clientes antes de falar o preço, várias pessoas acharam que era produto licenciado da loja oficial. O produto já convence sozinho.</div>
+          <div class="review-photos">
+            <div class="review-photo-wrap"><img class="review-photo" src="images/imagem4.webp" data-name="imagem4.webp" alt="Foto enviada por Camila T." onerror="reviewPhotoFallback(this)"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="band-b" id="oferta">
+  <div class="wrap">
+    <h2 class="center" style="font-size:clamp(22px,3vw,30px); margin-bottom:10px; text-transform:uppercase;">Escolha a melhor oferta pra você</h2>
+    <p class="center muted" style="margin-bottom:10px;">Pare de perder tempo e <span class="glow-text">VENDA 3X MAIS</span> com nossos modelos validados!</p>
     <div class="pricing-grid">
       <div class="price-card basic">
         <div class="plan-name">Pack Básico 3D Futebol Pro</div>
@@ -795,10 +817,12 @@
         <div class="price-divider"></div>
 
         <ul class="price-list">
-          <li>Pack com +60 modelos STL ultra realistas de mascotes e estádios do futebol</li>
+          <li>+60 modelos STL de mascotes premium e estádios do futebol brasileiro</li>
           <li>Sem os demais bônus</li>
           <li>Acesso vitalício</li>
           <li>Liberado para venda e edição</li>
+          <li>Arquivos organizados na área de membros</li>
+          <li>Pagamento único</li>
         </ul>
         <a href="https://pay.wiapy.com/SKR9SaWWByiu" class="cta-btn">QUERO O PACK BÁSICO</a>
       </div>
@@ -816,8 +840,10 @@
         <div class="price-divider"></div>
 
         <ul class="price-list">
-          <li>Pack com +60 modelos STL ultra realistas de mascotes e estádios do futebol</li>
+          <li>+60 modelos STL de mascotes premium e estádios do futebol brasileiro</li>
           <li>Liberado para venda e edição</li>
+          <li>Arquivos organizados na área de membros</li>
+          <li>Pagamento único</li>
           <li>BÔNUS 1: Pack Veículos 3D Profissionais</li>
           <li>BÔNUS 2: Coleção Heróis da Marvel</li>
           <li>BÔNUS 3: Pack Chaveiros Personalizados</li>
@@ -844,7 +870,7 @@
   <div class="wrap">
     <div class="guarantee">
       <img class="guarantee-seal-img" src="images/garantiaselo.webp" data-name="garantiaselo.webp (500x500)" alt="Selo de garantia" onerror="plainImgFallback(this)">
-      <h4><span class="glow-text">Garantia Incondicional de 14 Dias</span></h4>
+      <h4 style="text-transform:uppercase;"><span class="glow-text">Garantia Incondicional de 14 Dias</span></h4>
       <p>Você pode acessar a plataforma, baixar os primeiros modelos e imprimir. Se não ficar satisfeito com o resultado da textura de crochê na sua impressão 3D, devolvemos 100% do seu dinheiro, sem perguntas.</p>
     </div>
   </div>
@@ -854,7 +880,7 @@
 <section class="band-b">
   <div class="wrap">
     <div class="faq">
-      <h2 class="center" style="font-size:clamp(20px,3vw,26px); margin-bottom:20px;">Perguntas <span class="glow-text">Frequentes</span></h2>
+      <h2 class="center" style="font-size:clamp(20px,3vw,26px); margin-bottom:20px; text-transform:uppercase;">Perguntas <span class="glow-text">Frequentes</span></h2>
       <details class="faq-item">
         <summary>Preciso de impressora de resina para esses modelos?</summary>
         <p>Não! Todos os nossos modelos foram otimizados para imprimir perfeitamente em FDM (filamento). A textura disfarça incrivelmente bem as linhas de camada.</p>
